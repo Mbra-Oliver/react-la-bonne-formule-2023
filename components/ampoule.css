@@ -22,8 +22,8 @@
   border: 1px solid green;
 }
 .ampoule_item.dark {
-  background-color: black;
-  border: 1px solid black;
+  background-color: red;
+  border: 1px solid red;
 }
 
 .ampoule_item.light::after {

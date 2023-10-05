@@ -7,6 +7,7 @@ import AmpoulePage from "./AmpoulePage";
 const App = () => {
   return (
     <div>
+      <h1 className="text-center">TP Gestionnaire d'électricité</h1>
       <AmpoulePage />
     </div>
   );

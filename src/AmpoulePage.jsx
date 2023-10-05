@@ -34,11 +34,19 @@ export default function ParentComponent() {
         />
       </div>
 
-      <button onClick={toggleAllAmpoules}>
-        {!allAmpouleOn
-          ? "Éteindre toutes les ampoules"
-          : "Allumer toutes les ampoules"}
-      </button>
+      <div className="main_button_container">
+        <button
+          onClick={toggleAllAmpoules}
+          className="main_button"
+          style={{
+            backgroundColor: !allAmpouleOn ? "green" : "red",
+          }}
+        >
+          {!allAmpouleOn
+            ? "Éteindre toutes les ampoules"
+            : "Allumer toutes les ampoules"}
+        </button>
+      </div>
     </>
   );
 }
