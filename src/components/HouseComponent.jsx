@@ -14,7 +14,7 @@ export default function HouseComponent() {
 
   const toggleAllAmpouleState = () => {
     setAllAmpouleOn(!allAmpouleOn);
-    const newHouseAmpouleState = houseAmpouleState.map(() => allAmpouleOn);
+    const newHouseAmpouleState = houseAmpouleState.map(() => !allAmpouleOn);
     setHouseAmpouleState(newHouseAmpouleState);
   };
 
