@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Actions from "./components/Actions";
+import ListContainer from "./components/ListContainer";
+import { items } from "./data";
+import { intersection, not } from "./utils";
+
+const App = () => {
+  const [leftItems, setLeftItems] = useState(items);
+  const [rightItems, setRightItems] = useState([]);
+  const [checkedItem, setCheckedItem] = useState([]);
+
+  const leftCheckedItems = intersection(leftItems, checkedItem);
+  const rightCheckedItems = intersection(rightItems, checkedItem);
+
+  const handleToggle = (item) => {
+    const currentIndex = checkedItem.indexOf(item);
+    const newCheckedItem = [...checkedItem];
+
+    //Gerer l'état coché
+
+    if (currentIndex === -1) {
+      newCheckedItem.push(item);
+    } else {
+      newCheckedItem.splice(currentIndex, 1);
+    }
+
+    setCheckedItem(newCheckedItem);
+
+    console.log(newCheckedItem);
+  };
+
+  const moveRight = () => {
+    setRightItems(rightItems.concat(leftCheckedItems));
+
+    setLeftItems(not(leftItems, leftCheckedItems));
+    setCheckedItem(not(checkedItem, leftCheckedItems));
+  };
+
+  const moveLeft = () => {
+    setLeftItems(leftItems.concat(rightCheckedItems));
+    setRightItems(not(rightItems, rightCheckedItems));
+    setCheckedItem(not(checkedItem, rightCheckedItems));
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ListContainer items={leftItems} handleToggle={handleToggle} />
+      <Actions moveLeft={moveLeft} moveRight={moveRight} />
+      <ListContainer items={rightItems} handleToggle={handleToggle} />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
