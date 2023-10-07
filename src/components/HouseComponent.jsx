@@ -47,10 +47,10 @@ export default function HouseComponent() {
         className="main_button"
         onClick={toggleAllAmpouleState}
         style={{
-          backgroundColor: !allAmpouleOn ? "green" : "red",
+          backgroundColor: allAmpouleOn ? "green" : "red",
         }}
       >
-        {!allAmpouleOn ? "Allumer" : "Eteindre"} toute les ampoules
+        {allAmpouleOn ? "Allumer" : "Eteindre"} toute les ampoules
       </button>
     </>
   );
