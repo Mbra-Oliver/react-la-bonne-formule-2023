@@ -1,0 +1,27 @@
+.fruit_page_container {
+  width: 800px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  background-color: rosybrown;
+  padding: 1rem;
+}
+
+.fruit_categorie_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.description {
+  font-size: 14px;
+  color: #ccc;
+}

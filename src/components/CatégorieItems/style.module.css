@@ -1,0 +1,23 @@
+.content {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 15px;
+}
+
+.header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  background-color: rosybrown;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contentBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  height: 200px;
+}

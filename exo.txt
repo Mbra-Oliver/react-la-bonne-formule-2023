@@ -1,0 +1,21 @@
+Bien sûr ! Voici huit fruits de chaque catégorie :
+
+Catégorie 1 : Fruits à pépins
+1. Pomme Granny Smith
+2. Pomme Gala
+3. Pomme Red Delicious
+4. Pomme Fuji
+5. Pomme Honeycrisp
+6. Pomme Pink Lady
+7. Pomme Golden Delicious
+8. Pomme McIntosh
+
+Catégorie 2 : Fruits à noyau
+1. Pêche jaune
+2. Pêche blanche
+3. Pêche de vigne
+4. Nectarine
+5. Abricot
+6. Prune
+7. Cerise douce
+8. Cerise acide
