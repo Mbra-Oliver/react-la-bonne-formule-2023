@@ -1,4 +1,7 @@
 .flex {
   display: flex;
   gap: 1rem;
+  transition: 1s ease-in-out;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }

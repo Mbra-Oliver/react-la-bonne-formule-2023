@@ -2,14 +2,17 @@
   width: 800px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
 }
 .header {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 
   background-color: rosybrown;
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
   padding: 1rem;
 }
 
@@ -24,4 +27,15 @@
 .description {
   font-size: 14px;
   color: #ccc;
+}
+
+.main_btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: rosybrown;
+  font-size: 14px;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
 }

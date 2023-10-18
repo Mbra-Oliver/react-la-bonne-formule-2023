@@ -1,6 +1,26 @@
-Bien sûr ! Voici huit fruits de chaque catégorie :
+Hello mes devs REACT. Dans le cadre de la formation sur React on poursuit ici nos différents TP et aujourd'hui je vous propose un TP bien spécial. Je vous laisse l'énoncer, on verra comment vous ferez pour le résoudre avant que je ne publie une vidéo pour vous montrer comment moi je fais: 
 
-Catégorie 1 : Fruits à pépins
+
+
+Énoncé  :
+
+
+
+**Objectif :** Vous devez développer une application React permettant aux utilisateurs de gérer deux catégories de fruits distinctes : les "Fruits à pépins" et les "Fruits à noyau". 
+
+Initialement, la catégorie "Fruits à pépins" doit être préremplie avec une liste de pommes, et la catégorie "Fruits à noyau" avec une liste vide . Les utilisateurs auront la possibilité de cocher les fruits qu'ils souhaitent, et une fois leurs choix effectués, ils pourront les soumettre pour vérification.
+
+
+
+**Détails :**
+
+
+
+1. L'application doit afficher deux catégories de fruits distinctes : "Fruits à pépins" et "Fruits à noyau".
+
+
+
+2. La catégorie "Fruits à pépins" doit être initialement préremplie avec la liste suivante de pommes : 
 1. Pomme Granny Smith
 2. Pomme Gala
 3. Pomme Red Delicious
@@ -9,13 +29,76 @@ Catégorie 1 : Fruits à pépins
 6. Pomme Pink Lady
 7. Pomme Golden Delicious
 8. Pomme McIntosh
+9. Pêche jaune
+10. Pêche blanche
+11. Pêche de vigne
+12. Nectarine
+13. Abricot
+14. Prune
+15. Cerise douce
+16. Cerise acide
 
-Catégorie 2 : Fruits à noyau
-1. Pêche jaune
-2. Pêche blanche
-3. Pêche de vigne
-4. Nectarine
-5. Abricot
-6. Prune
-7. Cerise douce
-8. Cerise acide
+
+
+
+
+
+3. La catégorie "Fruits à noyau" doit être initialement vide.
+
+
+
+
+4. Chaque fruit doit être représenté sous forme d'une case à cocher.
+
+
+5. Les utilisateurs peuvent cocher les fruits de leur choix dans chaque catégorie.
+
+
+6. Les utilisateurs peuvent déplacer les fruits dans la catégorie qu'ils trouvent être correct.
+
+
+
+
+
+
+vous devez verifier que chaque fruit se trouve dans la catégorie correct.
+
+deux constantes représentant les catégories correctes sont les suivantes: 
+
+
+export const Correct_PEPINS_FRUIT = [
+  "Pomme Granny Smith",
+  "Pomme Gala",
+  "Pomme Red Delicious",
+  "Pomme Fuji",
+  "Pomme Honeycrisp",
+  "Pomme Pink Lady",
+  "Pomme Golden Delicious",
+  "Pomme McIntosh",
+];
+
+
+
+export const Correct_NOYAU_FRUIT = [
+  "Pêche jaune",
+  "Pêche blanche",
+  "Pêche de vigne",
+  "Nectarine",
+  "Abricot",
+  "Prune",
+  "Cerise douce",
+  "Cerise acide",
+];
+
+
+6. Ajouter un bouton de soumission
+
+Lors de la soumission, vérifier que les fruits se trouve dans la bonne catégorie et si tel est le cas alors affiché un message "Exercice réussi" et sinon afficher un message d'alerte "Echec de l'exercice".
+
+
+
+
+
+En développant cette application, veillez à fournir une expérience utilisateur fluide et intuitive pour la sélection des fruits, la vérification des choix et la finalisation de la sélection.
+
+Bonne chance.
