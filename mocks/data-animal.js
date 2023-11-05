@@ -197,7 +197,7 @@ export function searchData(nom) {
   let result = allData();
   if (nom) {
     result = allData().filter((animal) => {
-      return animal.nom === nom;
+      return animal.nom.toLocaleLowerCase().includes(nom.toLowerCase());
     });
   }
   return result;
