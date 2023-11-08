@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Search from "./Search";
 import CategorieList from "./CategorieList";
@@ -8,6 +8,7 @@ import { allData, filteredData, searchData } from "../../mocks/data-animal";
 
 export default function PageContainer() {
   const [animals, setAnimals] = useState(allData);
+  const [animalToDisplay, setAnimalsToDisplay] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(4);
@@ -17,9 +18,11 @@ export default function PageContainer() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  //Une variable qui recupere les animaux a afficher
+  useEffect(() => {
+    setAnimalsToDisplay(animals.slice(startIndex, endIndex));
+  }, [currentPage, search]);
 
-  const animalToDisplay = animals.slice(startIndex, endIndex);
+  //Une variable qui recupere les animaux a afficher
 
   const handleSearch = (searchText) => {
     setSearch(searchText);
