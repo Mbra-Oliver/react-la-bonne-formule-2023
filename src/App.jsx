@@ -4,13 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./components/Header";
 import Product from "./components/Products";
+import { ManagementCartContextProvider } from "./store/management-cart-context";
 
 function App() {
   return (
-    <>
+    <ManagementCartContextProvider>
       <Header />
       <Product />
-    </>
+    </ManagementCartContextProvider>
   );
 }
 
