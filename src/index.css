@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 5rem;
 }
 
 h1 {
@@ -68,6 +69,26 @@ button:focus-visible {
   }
 }
 
+header {
+  background-color: white;
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul li.appName {
+  font-weight: bold;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -87,4 +108,12 @@ button:focus-visible {
 .product-item .product-name {
   font-weight: bold;
   font-size: 22px;
+}
+
+@media only screen and (max-width: 768px) {
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
 }
