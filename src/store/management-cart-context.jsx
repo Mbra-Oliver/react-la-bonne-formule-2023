@@ -42,12 +42,39 @@ const cartReducer = (state, action) => {
       if (product) {
         updatedShoppingCartItems.push({
           id: action.payload,
-          name: "A Good Product",
+          name: product.name,
           amount: product.price,
           quantity: 1,
         });
       }
     }
+    return {
+      items: updatedShoppingCartItems,
+    };
+  }
+
+  if (action.type === "UPDATE_ITEM_QUANTITY") {
+    const updatedShoppingCartItems = [...state.items];
+    const updatedElementIndex = updatedShoppingCartItems.findIndex(
+      (cartItem) => cartItem.id === action.payload.productId
+    );
+
+    const updatedData = {
+      ...updatedShoppingCartItems[updatedElementIndex],
+    };
+
+    const newQuantity = action.payload.quantity;
+
+    console.log("before", updatedData.quantity);
+
+    updatedData.quantity += newQuantity;
+
+    if (updatedData.quantity <= 0) {
+      updatedShoppingCartItems.splice(updatedElementIndex, 1);
+    } else {
+      updatedShoppingCartItems[updatedElementIndex] = updatedData;
+    }
+
     return {
       items: updatedShoppingCartItems,
     };
@@ -67,7 +94,15 @@ export const ManagementCartContextProvider = ({ children }) => {
       payload: id,
     });
   };
-  const handleUpdateItemQuantity = () => {};
+  const handleUpdateItemQuantity = (productId, amount) => {
+    cartDispatch({
+      type: "UPDATE_ITEM_QUANTITY",
+      payload: {
+        productId,
+        quantity: amount,
+      },
+    });
+  };
 
   const initialValue = {
     items: cartState.items,

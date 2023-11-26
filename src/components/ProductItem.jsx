@@ -17,8 +17,9 @@ export default function ProductItem({ product }) {
   return (
     <div className="product-item">
       <div style={backgroundImageStyle}></div>
-      <div className="product-name">A Good Product</div>
+      <div className="product-name">{product.name}</div>
       <p className="product-desc">{product.description.slice(0, 100)}</p>
+      <div className="price">{product.price} Euros</div>
 
       <button onClick={() => addItemToCart(product.id)}>
         Ajouter au panier
