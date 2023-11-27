@@ -48,7 +48,7 @@ export default function Cart() {
 
       {items.length > 0 && (
         <p id="cart-total-price">
-          Cart Total: <strong>{totalPrice.toFixed(2)} Euros</strong>
+          Montant Total: <strong>{totalPrice.toFixed(2)} Euros</strong>
         </p>
       )}
     </div>
