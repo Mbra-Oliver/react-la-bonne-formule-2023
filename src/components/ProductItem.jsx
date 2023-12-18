@@ -1,6 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { shoppingCartActions } from "./../store/shopping-cart-slice";
 
 export default function ProductItem({ product }) {
+  const dispatch = useDispatch();
+
+  const handleAddItemToCart = () => {
+    dispatch(shoppingCartActions(product));
+  };
+
   const divStyle = {
     backgroundImage: `url(${product.cover})`,
     backgroundSize: "cover", // Vous pouvez ajuster ceci en fonction de vos besoins
@@ -16,7 +24,7 @@ export default function ProductItem({ product }) {
       <div className="description">{product.description}</div>
       <div className="price">{product.price} CFA</div>
 
-      <button>ajouter au panier</button>
+      <button onClick={handleAddItemToCart}>ajouter au panier</button>
     </div>
   );
 }
