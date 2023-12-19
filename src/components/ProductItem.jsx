@@ -6,7 +6,7 @@ export default function ProductItem({ product }) {
   const dispatch = useDispatch();
 
   const handleAddItemToCart = () => {
-    dispatch(shoppingCartActions(product));
+    dispatch(shoppingCartActions.addItemToCart(product));
   };
 
   const divStyle = {
