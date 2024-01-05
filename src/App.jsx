@@ -18,6 +18,7 @@ import AuthenticationPage, {
 } from "./pages/Authentication";
 import { action as logoutAction } from "./pages/Logout";
 import { checkAuthLoader, tokenLoader } from "./utils/auth";
+
 const router = createBrowserRouter([
   {
     path: "/",
